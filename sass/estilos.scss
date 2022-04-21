@@ -1,0 +1,1293 @@
+// Importando Sass
+
+@import 'colores';
+@import 'fuentes';
+@import 'formulario'; // Estilos para el formulario
+
+// Fin de la importación
+
+// Estilos globales
+
+body{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: $principal;
+}
+
+
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+p, li, a, input{
+    font-size: 1.4rem;
+    font-weight: $normal;
+}
+
+h1, h2, h3{
+    font-weight: $titulos;
+}
+
+.principal{
+    background-image: url('../img/manos.png');
+    font-family: $principal;
+}
+
+
+.header--enlaces{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    // margin-left: 40px;
+    text-align: center;
+}
+
+// fin de estilos globales
+
+// Botón de menu (solo visible en mobile)
+.header--hamburger{
+    display: none;
+}
+// Fin boton
+
+// Estilos al header 
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: $blanco;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    .header--logo{
+        margin-left: 50px;
+    }
+
+
+    .header--enlaces{
+        display: flex;
+        font-size: 1.2rem;
+        align-items: center;
+            .social{
+                margin: 0 5px;
+                outline: 2px solid $social;
+                font-size: 1rem;
+                padding: 3px;
+                border-radius: 4px;
+                transition: .5s ease transform;
+                &:hover{
+                    background-color: $social;
+                    color: $colorMenu;
+                    transform: translateY(-10px);
+                }
+            }
+
+            .header--enlaces__info {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                width: 180px;
+                text-align: center;
+                margin: auto;
+                label{
+                    display: inline-flex;
+                }
+                .cajas{
+                    color: $colorMenu;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    line-height: .8;
+                    width: 100%;
+                    padding: 0 20px;
+                }
+            }
+
+            .uno{
+                background-color: $social;
+                // padding: 28px 10px;
+                margin-left: 70px;
+            }
+
+            .dos{
+                background-color: $claro;
+                // padding: 28px 10px;
+            }
+            .tres{
+                background-color: $naranja;
+                // padding: 28px 10px;
+            }
+
+    }
+}
+// Fin header
+
+
+// Media Query para Header
+@media screen and (max-width: 767px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        // Boton menu hamburger
+        .main-menu--show{
+            display: grid;
+            position: relative !important;
+            visibility: visible !important;
+            transform: translateX(0%) !important;
+        }
+        .header--hamburger{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            display: block;
+        }
+
+        .header--hamburger .line{
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: rgb(8, 5, 160);
+            margin-block: 10px;
+            border-radius: 4px;
+            transition: transform .5s;
+            opacity: .25s;
+        }
+
+        .header--hamburger.active .line:nth-child(1){
+            transform: translateY(12px) rotate(45deg);
+        }
+
+        .header--hamburger.active .line:nth-child(2){
+            opacity: 0;
+        }
+
+        .header--hamburger.active .line:nth-child(3){
+            transform: translateY(-12px) rotate(-45deg);
+        }
+        // Fin botón hamburger
+
+        .header--enlaces{
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 50px 60px 60px 60px;
+            grid-template-areas: 
+            "face twi yt lin ins"
+            "azul azul azul azul azul"
+            "claro claro claro claro claro"
+            "reg reg reg reg reg";
+            // visibility: hidden;
+            transform: translateX(-120%);
+            position: absolute;
+            transition: transform .3s;
+            .face{
+                grid-area: face;
+            }
+            .twi{
+                grid-area: twi;
+            }
+            .you{
+                grid-area: yt;
+            }
+            .lin{
+                grid-area: lin;
+            }
+            .ins{
+                grid-area: ins;
+            }
+            .uno, .dos, .tres{
+                width: 100%;
+            }
+            .uno{
+                grid-area: azul;
+                margin-left: 0;
+            }
+            .dos{
+                grid-area: claro;
+            }
+            .tres{
+                grid-area: reg;
+            }
+        }
+    }
+}
+// Fin Mediaquery Header
+
+
+
+// Seccion de imagenes con las manos
+    article#manos{
+        .grid__mujer{
+            background: $blanco url('../img/manos.png');            
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            .mano__women{
+                margin: 0;
+                margin-left: -40px;
+            }
+        
+            figcaption{
+                margin: 0;
+                margin-left: 50px;
+                
+                .logo--crece{
+                    margin-top: 120px;
+                }
+                .sub{
+                    color: $claro;
+                    padding: 0 20px;
+                    text-align: left;
+                    margin-left: 30px;
+                    font-size: 1.75rem;
+                    margin-right: -20px;
+                }
+            }
+        }
+    
+        #about{
+            margin-top: 60px;
+            text-align: left;
+            margin-left: 50px;
+            .about{
+                color: $naranja;
+                font-size: 2.5rem;
+                margin-left: 0;
+            }
+            .about--texto{
+                margin-top: 20px;
+                font-size: 1.1rem;
+                width: 80%;
+            }
+        }
+    }
+// Fin de sección de manos
+
+// Media QUerys para manos
+@media screen and (max-width: 767px){
+    article#manos{
+        .grid{
+            display: block;
+            .mano__women{
+                margin: 30px 0;
+            }
+        
+            figcaption{
+                margin: 0;
+                .logo--crece{
+                    margin-top: 150px;
+                }
+                .sub{
+                    padding: 0;
+                    font-size: 1.3rem;
+                    margin-right: -10px;
+                }
+            }
+        }
+    
+        #about{
+            .about{
+                font-size: 2rem;
+            }
+            .about--texto{
+                width: 90%;
+                margin-bottom: 60px;
+            }
+        }
+    }    
+}
+// Fin de mediaQuerys para manos
+
+
+// Seccion bg naranja
+article.bg--orange{
+    background-color: $naranja;
+    padding: 160px 0;
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+
+        #who{
+            z-index: 10;
+        }
+
+        .who--titulo{
+            border-left: 5px solid $blanco;
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 15px;
+            strong{
+                display: block;
+            }
+        }
+        
+        .who--titulo, .requi--text{
+            text-align: left;
+            font-size: 2.5rem;
+            color: $blanco;
+        }
+
+        .box{
+            background-color: $blanco;
+            margin: 20px auto;
+            width: 70%;
+            height: 180px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 5px $negro;
+            display: flex;
+            padding: 30px;
+            align-items: center;
+            .icon{
+                width: 20%;
+                text-align: left;
+                margin-right: 20px;
+            }
+            .bar{
+                width: 1px;
+                height: 140px;
+                // transform: rotate(90deg) ;
+                outline: 1px solid $tarjeta;
+                background-color: $tarjeta;
+            }
+            .icon--texto{
+                font-size: 1.1rem;
+                text-align: left;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .requi{
+        margin-top: 40px;
+        margin-left: 30px;
+        width: 85%;
+        z-index: 10;
+        .requi--list{
+            color: $blanco;
+            font-size: 1.3rem;
+            text-align: left;
+            list-style: none;
+            li{
+                margin-top: 12px;
+                position: relative;
+                &::before{
+                    content: "";
+                    background-color: $social;
+                    position: absolute;
+                    left: -32px;
+                    top: 50%;
+                    border-right: 2px;
+                    border-bottom: 2px;
+                    width: 1%;
+                    height: 3px;
+                    transform: rotate(58deg);
+                    border: transparent
+                }
+                &::after{
+                    content: "";
+                    background-color: $social;
+                    position: absolute;
+                    left: -30px;
+                    top: 50%;
+                    transform: rotate(-35deg);
+                    border-right: 2px;
+                    border-bottom: 2px;
+                    width: 2.8%;
+                    height: 3px;
+                }
+            }            
+        }
+    }
+
+}
+// fin bg naranja
+
+// MediaQUerys Sección Naranja (requisitos)
+@media screen and(max-width: 767px) {
+    article.bg--orange{
+        padding: 100px 0;
+    
+        .grid{
+            display: block;
+    
+            #who{
+                z-index: 10;
+            }
+            
+            .who--titulo, .requi--text{
+                font-size: 2rem;
+            }
+    
+            .box{
+                margin: 10px;
+                width: 90%;
+                height: 130px;
+                padding: 20px 5px;
+                .icon{
+                    width: 15%;
+                    text-align: center;
+                    margin-right: 10px;
+                }
+                .bar{
+                    width: 1px;
+                    height: 80px;
+                }
+                .icon--texto{
+                    font-size: 0.9rem;
+                    margin-left: 10px;
+                }
+            }
+        }
+    
+        .requi{
+            margin: auto;
+            margin-left: 40px;
+            width: 85%;
+            z-index: 10;
+            .requi--list{
+                font-size: 1.1rem;
+                li{
+                    margin-top: 10px;
+                }            
+            }
+        }
+    
+    }
+}
+// Fin MediaQuery sección Naranja
+
+
+
+// Inicio de la imagen con gradiente ondular
+.onda--gradiente{
+    background-color: $bg--gradiente;
+    .onda{
+        position: relative;
+        .onda--titulo{
+            z-index: 10;
+            position: relative;
+            color: $blanco;
+            font-size: 3.8rem;
+            text-align: center;
+            strong{
+                display: block;
+            }
+        }
+        .onda--img{
+            z-index: 1;
+            position: absolute;
+            top: -250px;
+            width: 100%;
+        }
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        margin-top: 200px;
+        width: 80%;
+        gap: 20px 8px;
+        .diagn{
+            border-bottom: 10px solid $social;
+            .titulo{
+                color: $social;
+                font-size: 1.4rem;
+                position: relative;
+                margin-bottom: 15px;
+                &::after{
+                    content: "";
+                    background-color: $social;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    border-right: 2px;
+                    border-bottom: 2px;
+                    width: 10%;
+                    height: 5px;
+                    border-radius: 30px;
+                    border: transparent;
+                }
+            }
+        }
+        .entre{
+            border-bottom: 10px solid $rojo;
+            .titulo{
+                color: $rojo;
+                font-size: 1.4rem;
+                position: relative;
+                margin-bottom: 15px;
+                &::after{
+                    content: "";
+                    background-color: $rojo;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    border-right: 2px;
+                    border-bottom: 2px;
+                    width: 10%;
+                    height: 5px;
+                    border-radius: 30px;
+                    border: transparent;
+                }
+            }
+        }
+        .asesoria{
+            border-bottom: 10px solid $naranja;
+            .titulo{
+                color: $naranja;
+                font-size: 1.4rem;
+                position: relative;
+                margin-bottom: 15px;
+                &::after{
+                    content: "";
+                    background-color: $naranja;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    border-right: 2px;
+                    border-bottom: 2px;
+                    width: 10%;
+                    height: 5px;
+                    border-radius: 30px;
+                    border: transparent;
+                }
+            }
+        }
+        .empresa{
+            border-bottom: 10px solid $verde;
+            .titulo{
+                color: $verde;
+                font-size: 1.4rem;
+                position: relative;
+                margin-bottom: 15px;
+                &::after{
+                    content: "";
+                    background-color: $verde;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    border-right: 2px;
+                    border-bottom: 2px;
+                    width: 10%;
+                    height: 5px;
+                    border-radius: 30px;
+                    border: transparent;
+                }
+            }
+        }
+        .carrera--caja{
+            display: flex;
+            gap: 10px;
+            padding: 35px 15px;
+            background-color: $blanco;
+            border-radius: 20px;
+            box-shadow: 1px 1px 7px $tarjeta;
+            .caja--icono{
+                width: 60%;
+            }
+            .carrera--texto > p{
+                font-size: 1.1rem
+            }
+        }
+    }
+
+    .marcas{
+        text-align: center;
+    }
+
+}
+// Fin de imagen con gradiente 
+
+// MediaQUerys para sección de gradiente ondular
+@media screen and (max-width: 321px){ //Media querys para telefonos pequeños
+    .onda--gradiente{
+        .onda{
+            .onda--titulo{
+                font-size: 1.2rem;
+            }
+            .onda--img{
+                z-index: 1;
+                top: -70px;
+            }
+        }
+    
+        .grid{
+            display: block;
+            // margin: 0 auto;
+            margin-top: 60px;
+            // width: 90%;
+            .diagn{
+                // border-bottom: 10px solid $social;
+                .titulo{
+                    // color: $social;
+                    // font-size: 1.4rem;
+                    // position: relative;
+                    // margin-bottom: 0px;
+                    &::after{
+                        // content: "";
+                        // background-color: $social;
+                        // position: absolute;
+                        // left: 0;
+                        // top: 100%;
+                        // border-right: 2px;
+                        // border-bottom: 2px;
+                        width: 25%;
+                        // height: 5px;
+                        // border-radius: 30px;
+                        // border: transparent;
+                    }
+                }
+            }
+            .entre{
+                // border-bottom: 10px solid $rojo;
+                .titulo{
+                    // color: $rojo;
+                    // font-size: 1.4rem;
+                    // position: relative;
+                    // margin-bottom: 15px;
+                    &::after{
+                        // content: "";
+                        // background-color: $rojo;
+                        // position: absolute;
+                        // left: 0;
+                        // top: 100%;
+                        // border-right: 2px;
+                        // border-bottom: 2px;
+                        width: 25%;
+                        // height: 5px;
+                        // border-radius: 30px;
+                        // border: transparent;
+                    }
+                }
+            }
+            .asesoria{
+                // border-bottom: 10px solid $naranja;
+                .titulo{
+                    // color: $naranja;
+                    // font-size: 1.4rem;
+                    // position: relative;
+                    // margin-bottom: 15px;
+                    &::after{
+                        // content: "";
+                        // background-color: $naranja;
+                        // position: absolute;
+                        // left: 0;
+                        // top: 100%;
+                        // border-right: 2px;
+                        // border-bottom: 2px;
+                        width: 25%;
+                        // height: 5px;
+                        // border-radius: 30px;
+                        // border: transparent;
+                    }
+                }
+            }
+            .empresa{
+                // border-bottom: 10px solid $verde;
+                .titulo{
+                    // color: $verde;
+                    // font-size: 1.4rem;
+                    // position: relative;
+                    // margin-bottom: 15px;
+                    &::after{
+                        // content: "";
+                        // background-color: $verde;
+                        // position: absolute;
+                        // left: 0;
+                        // top: 100%;
+                        // border-right: 2px;
+                        // border-bottom: 2px;
+                        width: 25%;
+                        // height: 5px;
+                        // border-radius: 30px;
+                        // border: transparent;
+                    }
+                }
+            }
+            .carrera--caja{
+                margin: 10px auto;
+                // display: flex;
+                // gap: 60px;
+                padding: 20px 10px;
+                // background-color: $blanco;
+                // border-radius: 20px;
+                // box-shadow: 1px 1px 7px $tarjeta;
+                .carrera--texto > p{
+                    font-size: 1rem;
+                    margin-left: -20px;
+                }
+            }
+        }
+    
+        .marcas{
+            text-align: center;
+        }
+    
+    } 
+    
+}
+
+@media screen and(min-width:321px) and (max-width: 767px) {
+    .onda--gradiente{
+        .onda{
+            .onda--titulo{
+                font-size: 1.6rem;
+            }
+            .onda--img{
+                z-index: 1;
+                position: absolute;
+                top: -80px;
+                width: 100%;
+            }
+        }
+    
+        .grid{
+            display: block;
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 90%;
+            .diagn{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .entre{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .asesoria{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .empresa{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .carrera--caja{
+                margin: 10px auto;
+                padding: 20px 10px;
+                .carrera--texto > p{
+                    font-size: 1rem
+                }
+            }
+        }
+    
+        .marcas{
+            text-align: center;
+        }
+    
+    }    
+}
+
+@media screen and (min-width:767px) and (max-width: 920px) {
+    .onda--titulo{
+        font-size: 2.6rem;
+    }
+    .onda--img{
+        z-index: 1;
+        position: absolute;
+        top: -80px;
+        width: 100%;
+    }
+}
+// Fin de mediaQuerys para gradiente ONdular
+
+
+// Patrocinadores
+.marcas{
+    background-color: $blanco;
+    .aliados--titulo{
+        text-align: center;
+        font-size: 2rem;
+        position: relative;
+        color: $social;
+        text-transform: uppercase;
+        strong{
+            display: block
+        }
+        &::after{
+            content: "";
+            background-color: $social;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 40px;
+            height: 5px;
+            border-radius: 30px;
+            margin-top: 20px;
+            border: transparent;
+            }
+    }
+    .marcas--logos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 15px;
+        justify-content: center;
+        margin: auto;
+        width: 60%;
+        .logo {
+            margin: 0;
+            p{
+                font-size: 0.9rem;
+                color: gray;
+                font-weight: bold !important;
+            }
+        }
+        img{
+            width: 100%;
+        }
+    }
+    .brands{
+        margin-top: 50px;
+    }
+    .end{
+        text-transform: uppercase;
+        color: gray;
+        font-size: 0.9rem;
+        text-align: center;
+        margin: 45px auto;
+        font-weight: bold !important;
+    }
+}
+// Fin de parocinadores
+
+
+// MediaQUerys para patrocinadores
+@media screen and (max-width: 767px) {
+    .marcas{
+        // background-color: $blanco;
+        .aliados--titulo{
+            // text-align: center;
+            font-size: 1.2rem;
+            // position: relative;
+            // color: $social;
+            // text-transform: uppercase;
+            &::after{
+                // content: "";
+                // background-color: $social;
+                // position: absolute;
+                left: 50%;
+                top: 80%;
+                width: 20%;
+                height: 2px;
+                // border-radius: 30px;
+                // margin-top: 0px;
+                // border: transparent;
+                }
+        }
+        .marcas--logos{
+            // display: grid;
+            // grid-template-columns: repeat(2, 1fr);
+            gap: 10px 15px;
+            // justify-content: center;
+            // margin: auto;
+            width: 85%;
+            .logo {
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+        .brands{
+            margin-top: 50px;
+        }
+        .end{
+            text-transform: uppercase;
+            color: gray;
+            font-size: 0.8rem;
+            text-align: center;
+            margin: 20px auto;
+        }
+    }
+}
+// Fin de mediaQUerys patrocinadores
+
+
+// Footer
+.footer{
+    background: $naranja url('../img/manos.png') repeat;
+    background-position: 0 0;
+    background-attachment: fixed;
+    padding: 50px 0px;
+    .texto{
+        color: $blanco;
+        text-align: center;
+        font-size: 1.6rem;
+        margin: 30px auto;
+        .footer--text{
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    .mail{
+        font-weight: bold !important;
+        margin: 15px auto;
+    }
+    .register{
+        display: block;
+        width: 20%;
+        margin: auto;
+        padding: 10px 60px;
+        background-color: $social;
+        border-radius: 40px;
+        margin-top: 60px;
+    }
+}
+// Fin del footer
+
+// Media QUery para footer (dispositivos Móviles)
+@media screen and (max-width: 767px) {
+    .footer{
+        padding: 30px 0px;
+        .texto{
+            font-size: 1.2rem;
+            margin: 25px auto;
+            .footer--text{
+                color: inherit;
+                text-decoration: none;
+                font-size: 1rem;
+                .mail{
+                    margin: 15px auto;
+                    font-size: .9rem;
+                }
+            }
+        }
+        .register{
+            display: block;
+            width: 80%;
+            margin: auto;
+            padding: 10px 0px;
+        }
+    }    
+}
+// Fin de mediaQUerys Footer
+
+// MediaQUerys solo para Tablet (retoques)
+
+// header
+@media screen and (min-width: 768px) and(max-width: 968px) {
+        .header{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            // Boton menu hamburger
+            .main-menu--show{
+                display: grid;
+                position: relative !important;
+                visibility: visible !important;
+                transform: translateX(0%) !important;
+            }
+            .header--hamburger{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 10px;display: block;
+            }
+    
+            .header--hamburger .line{
+                display: block;
+                width: 35px;
+                height: 2px;
+                background-color: rgb(8, 5, 160);
+                margin-block: 10px;
+                border-radius: 4px;
+                transition: transform .5s;
+                opacity: .25s;
+            }
+    
+            .header--hamburger.active .line:nth-child(1){
+                transform: translateY(12px) rotate(45deg);
+            }
+    
+            .header--hamburger.active .line:nth-child(2){
+                opacity: 0;
+            }
+    
+            .header--hamburger.active .line:nth-child(3){
+                transform: translateY(-12px) rotate(-45deg);
+            }
+            // Fin botón hamburger
+    
+            .header--enlaces{
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 50px 90px 90px 90px;
+                grid-template-areas: 
+                "face twi yt lin ins"
+                "azul azul azul azul azul"
+                "claro claro claro claro claro"
+                "reg reg reg reg reg";
+                // visibility: hidden;
+                transform: translateX(-120%);
+                position: absolute;
+                transition: transform .3s;
+                .face{
+                    grid-area: face;
+                }
+                .twi{
+                    grid-area: twi;
+                }
+                .you{
+                    grid-area: yt;
+                }
+                .lin{
+                    grid-area: lin;
+                }
+                .ins{
+                    grid-area: ins;
+                }
+                .uno, .dos, .tres{
+                    width: 100%;
+                }
+                .uno{
+                    grid-area: azul;
+                    margin-left: 0;
+                }
+                .dos{
+                    grid-area: claro;
+                }
+                .tres{
+                    grid-area: reg;
+                }
+            }
+        }
+}
+// Fin header
+
+// Manos
+@media screen and (min-width: 768px) and(max-width: 968px) {
+    article#manos{
+        .grid{
+            display: block;
+            .mano__women{
+                margin: 30px 0;
+            }
+        
+            figcaption{
+                margin: 0;
+                .logo--crece{
+                    margin-top: 150px;
+                }
+                .sub{
+                    padding: 0;
+                    font-size: 1.3rem;
+                    margin-right: -10px;
+                }
+            }
+        }
+    
+        #about{
+            .about{
+                font-size: 2rem;
+            }
+            .about--texto{
+                width: 90%;
+                margin-bottom: 60px;
+            }
+        }
+    }    
+}
+// Fin manos
+
+
+// Seccion naranaja
+@media screen and (min-width: 768px) and(max-width: 968px) {
+    article.bg--orange{
+        padding: 100px 0;
+    
+        .grid{
+            display: block;
+    
+            #who{
+                z-index: 10;
+            }
+            
+            .who--titulo, .requi--text{
+                font-size: 2rem;
+            }
+    
+            .box{
+                margin: 10px auto;
+                width: 70%;
+                height: 130px;
+                padding: 20px 5px;
+                .icon{
+                    width: 10%;
+                    text-align: center;
+                    margin-right: 10px;
+                }
+                .bar{
+                    width: 1px;
+                    height: 80px;
+                }
+                .icon--texto{
+                    font-size: 0.9rem;
+                    margin-left: 10px;
+                }
+            }
+        }
+    
+        .requi{
+            margin: 20px auto;
+            width: 75%;
+            z-index: 10;
+            .requi--list{
+                font-size: 1.1rem;
+                li{
+                    margin-top: 10px;
+                }            
+            }
+        }
+    
+    }
+}
+// Fin sección naranaja
+
+// MediaQUerys para sección de gradiente ondular
+@media screen and (min-width: 768px) and(max-width: 968px) {
+    .onda--gradiente{
+        .onda{
+            .onda--titulo{
+                font-size: 2.8rem;
+            }
+            .onda--img{
+                z-index: 1;
+                top: -155px;
+            }
+        }
+    
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 60px;
+            .diagn{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .entre{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .asesoria{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .empresa{
+                .titulo{
+                    &::after{
+                        width: 25%;
+                    }
+                }
+            }
+            .carrera--caja{
+                margin: 10px auto;
+                padding: 20px 10px;
+                .carrera--texto > p{
+                    font-size: 1rem;
+                    margin-left: -20px;
+                }
+            }
+        }
+    
+        .marcas{
+            text-align: center;
+        }
+    
+    } 
+    
+}
+// Fin gradiente 
+
+// Media QUery para footer (dispositivos Móviles)
+@media screen and (min-width: 768px) and(max-width: 968px) {
+    .footer{
+        padding: 30px 0px;
+        .texto{
+            font-size: 1.2rem;
+            margin: 25px auto;
+            .footer--text{
+                color: inherit;
+                text-decoration: none;
+                font-size: 1rem;
+                .mail{
+                    margin: 15px auto;
+                    font-size: .9rem;
+                }
+            }
+        }
+        .register{
+            display: block;
+            width: 30%;
+            margin: auto;
+            padding: 10px 0px;
+        }
+    }    
+}
+// Fin de mediaQUerys Footer
+
+
+// Fin de MediaQUerys Tablet
+
+
+
+
+
+
+
+// Boton para ir arriba
+.to--top{
+    display: none;
+    padding: 10px 14px;
+    background: $social;
+    font-size: 2rem;
+    color: $blanco;
+    cursor: pointer;
+    position: fixed;
+    z-index: 110;
+    bottom: 35px;
+    right: 35px;
+    transition: .5s transform ease;
+    &:hover{
+        transform: translateY(-5px)
+    }
+}
+// Fin botón ir arriba

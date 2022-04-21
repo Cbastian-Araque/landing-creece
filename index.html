@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetación Web</title>
+
+    <!-- Hoja de estilos principal -->
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- <link rel="stylesheet" href="css/estilos.css"> -->
+    
+    <!-- Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;900&family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    
+</head>
+<body>
+    
+    <!-- Boton para volver al inicio -->
+    <span><i class="to--top top fas fa-angle-double-up"></i></span>
+
+
+    <div class="principal">
+
+        <!-- encabezado -->
+
+    
+        <header class="header">
+            <div class="header--logo">
+                <a href="#">
+                    <img src="img/logoccc.png" alt="Logo CCC" width="200">
+                </a>
+            </div>
+
+            <button type="button" class="header--hamburger" id="toggle-menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+            <ul class="header--enlaces main-menu" id="main-menu">
+                <li class="face"><a href="#" target="_blank" class="header--enlaces__link"><i class="fab fa-facebook social"></i></a></li>
+                <li class="twi"><a href="#" target="_blank" class="header--enlaces__link"><i class="fab fa-twitter social"></i></a></li>
+                <li class="you"><a href="#" target="_blank" class="header--enlaces__link"><i class="fab fa-youtube social"></i></a></li>
+                <li class="lin"><a href="#" target="_blank" class="header--enlaces__link"><i class="fab fa-linkedin social"></i></a></li>
+                <li class="ins"><a href="#" target="_blank" class="header--enlaces__link"><i class="fab fa-instagram social"></i></a></li>
+
+                <li class="header--enlaces__info uno"><a href="#" target="_blank" class="header--enlaces__link cajas"><b>Términos y</b> condiciones de cada municipio</a></li>
+                <li class="header--enlaces__info dos"><a href="#" target="_blank" class="header--enlaces__link cajas"><b>Información </b>de contacto</a></li>
+                <li class="header--enlaces__info tres"><label for="check" class="header--enlaces__info tres"><a class="header--enlaces__link cajas">Registrate</a></label></li>
+            </ul>
+        </header>
+
+
+        <article id="manos" class="manos"> 
+            <section class="grid grid__mujer">
+                <figcaption id="logo--crece">
+                    <img src="img/logo-creece.png" alt="logo-creece" width="90%" class="logo--crece">
+                    <h3 class="sub">Un programa gratuito que te acompaña en tu reactivación económica</h3>
+                </figcaption>
+                
+                <figcaption id="mano__women" class="mano__women">
+                    <img src="img/hand-right.png" alt="Der baker" width="100%" class="mano mano__women">
+                </figcaption>
+
+            </section>
+
+            <section class="grid grid__hombre">
+                <img src="img/hand-left.png" alt="Distrifuturo" width="100%" class="mano mano__men">
+                <div id="about">
+                    <h2 class="about">¿Qué es CREEce?</h2>
+                    <p class="about--texto">Es un programa <strong>gratuito</strong> de fortalecimiento empresarial para dueños de empresas del sector gastronómico y sector comercio al detal, que te ayudará en tu proceso de reactivación económica a través de la aplicación de herramientas prácticas y útiles. Con este programa también mejorarás tu oferta de valor y avanzarás en la rutina del crecimiento de tu empresa. Liderado por la Cámara de Comercio de Cali junto al Ministerio de Comercio, Industria y Turismo y la Unión Europea.</p>
+                </div>
+            </section>
+        </article>
+
+        <article id="orange" class="bg--orange">
+            <section class="grid">
+                <div id="who" class="who">
+                    <p class="who--titulo"><strong>¿Quiénes </strong>pueden participar?</p>
+                    <div class="box">
+                        <img src="img/ico1.svg" alt="icono-1" class="icon person">
+                        <div class="bar"></div>
+                        <p class="icon--texto">Propietarios, gerentes o administradores que cuenten con autoridad y autonomía para la toma de decisiones en la empresa, apostándole a la reactivación con enfoque de transformación</p>
+                    </div>
+                    <div class="box">
+                        <img src="img/ico2.svg" alt="icono-2" class="icon build">
+                        <div class="bar"></div>
+                        <p class="icon--texto">Empresas del sector gastronómico y el sector comercio al detal (prendas de vestir, calzado y cuero)</p>
+                    </div>
+                </div>
+
+                <div class="requi">
+                    <p class="requi--text"><strong>Requisitos</strong></p>
+                    <ul class="requi--list">
+                        <li>Tiempo de funcionamineto superior a 1 año.</li>
+                        <li>Empresas ubicadas en Cali, Buenaventura, Popayán y Manizales.</li>
+                        <li>Contar con el Registro Mercantil de la Cámara de Comercio o RUT de la DIAN.</li>
+                        <li>Por lo menos con dos colaboradores o empleados.</li>
+                        <li>Compromiso en la implementación de acciones en la empresa.</li>
+                        <li>Alta motivación hacia el fortalecimiento de la empresa.</li>
+                        <li>Conocimiento de la operatividad de la empresa.</li>
+                        <li>Conocimiento de la información finanaciera de la empresa.</li>
+                        <li>Conocimientos básicos de herramientas Office (Excel y Word)</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        
+        <article class="onda--gradiente">
+            <div class="onda">
+                <p class="onda--titulo"><strong>Carrera</strong> del empresario</p>
+                <img src="img/onda-gradiente.png" alt="Onda" width="100%" class="onda--img">
+            </div>
+
+            <section class="grid">
+                <div class="diagn carrera--caja">
+                    <div class="caja--icono">
+                        <img src="/img/icon-diagnostico.svg" alt="Diagnóstico">
+                    </div>
+                    <div class="carrera--texto">
+                        <h2 class="titulo">Diagnóstico de Partida</h2>
+                        <p>Inicias con un análisis del estado general de tu empresa para estructurar de forma personalizada el plan de trabajo con actividades claves.</p>
+                    </div>
+                </div>
+
+                <div class="entre carrera--caja ">
+                    <div class="caja--icono">
+                        <img src="/img/icon-entrenamiento.svg" alt="Entrenamiento">
+                    </div>
+                    <div class="carrera--texto">
+                        <h2 class="titulo">Entrenamiento</h2>
+                        <p>Participas de los espacios de laboratorios y talleres virtuales con expertos, en los que podrás conocer y adoptar mejores prácticas administrativas al igual que métodos para lograr una empresa sustentable.</p>
+                    </div>
+                </div>
+
+                <div class="asesoria carrera--caja">
+                    <div class="caja--icono">
+                        <img src="/img/icon-asesoria.svg" alt="asesoría">
+                    </div>
+                    <div class="carrera--texto">
+                        <h2 class="titulo">Asesoría</h2>
+                        <p>Inicias con un análisis del estado general de tu empresa para estructurar de forma personalizada el plan de trabajo con actividades claves.</p>
+                    </div>
+                </div>
+                <div class="empresa carrera--caja">
+                    <div class="caja--icono">
+                        <img src="/img/icon-redes.svg" alt="redes empresariales">
+                    </div>
+                    <div class="carrera--texto">
+                        <h2 class="titulo">Redes Empresariales</h2>
+                        <p>Inicias con un análisis del estado general de tu empresa para estructurar de forma personalizada el plan de trabajo con actividades claves.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <article class="marcas">
+            <img src="img/conos.png" alt="Separador Gradiente" width="100%">
+            
+            <p class="aliados--titulo">
+                <strong>Aliados y Cámaras a las</strong> que se hará transferencia
+            </p>
+
+            <div class="marcas--logos brands">
+                <div class="logo">
+                    <p>LIDERA:</p>
+                </div>
+                <div class="logo">
+
+                </div>
+                <div class="logo">
+                    <p>ALIADOS:</p>
+                </div>
+                <div class="logo">
+                    <img src="img/logo-min-comercio.png" alt="Ministerios de Comercio">
+                </div>
+                <div class="logo">
+                    <img src="img/logoccc.png" alt="Cámara de Comercio de Cali">
+                </div>
+                <div class="logo">
+                    <img src="img/logo-union-europea.png" alt="Logo Union Europea">
+                </div>
+            </div>
+
+            <div class="marcas--logos">
+                <div class="logo">
+                    <p>APOYA:</p>
+                </div>
+                <div class="logo">
+                    <!-- espacio vacío -->
+                </div>
+                <div class="logo">
+                    <!-- Espacio vacío -->
+                </div>
+                <div class="logo">
+                    <img src="img/logo-ccbuenaventura.png" alt="Cámara de COmercio de Buenaventura">
+                </div>
+                <div class="logo">
+                    <img src="img/logo-cc-cauca.png" alt="Cámara de Comercio de Cauca">
+                </div>
+                <div class="logo">
+                    <img src="img/logo-cc-manizales.png" alt="Cámara de COmercio de Manizales">
+                </div>
+            </div>
+
+            <p class="end">
+                Programa de crecimiento empresarial
+            </p>
+        </article>
+
+
+        <footer class="footer" id="footer">
+            <p class="texto footer--text">Si tienes alguna duda,<br>comunícate al siguiente correo:</p>
+
+            <div class="texto">
+                <p class="footer--text">Sector Gastronómico:</p>
+                <a href="mailto:decocineroaempresario@ccc.gov.co" class="mail footer--text">decocineroaempresario@ccc.gov.co</a>
+            </div>
+
+            <div class="texto">
+                <p class="footer--text">Sector Comercial al detal:</p>
+                <a href="mailto:decomercianteaempresario@ccc.org.co" class="mail footer--text">decomercianteaempresario@ccc.org.co</a>
+            </div>
+
+            <div class="texto">
+                <label for="check"><a class="register footer--text" id="register">Regístrate</a></label>
+            </div>
+        </footer>
+
+    </div>
+
+    <input type="checkbox" class="checkbox" id="check">
+    <label for="check" class="exit">X</label>
+    <!-- <label for="check"><a class="register footer--text" id="register">Regístrate</a></label> -->
+
+    <div class="panel">
+        <form>
+            <h3>Déjanos tus datos</h3>
+            <input type="text" placeholder="Nombre y Apellido *" require>
+            <input type="number" placeholder="Cédula o NIT *" require>
+            <input type="tel" placeholder="Teléfono *" require>
+            <input type="email" placeholder="Correo Electrónico *" require>
+
+            <div class="terminos">
+                <input type="checkbox" name="acepto" id="acepto">
+                <label for="acepto">&nbsp;Autorizo el tratamiento de Datos Personales</label>
+
+            </div>
+            <input type="submit" value="Enviar" id="submit">
+        </form>
+    </div>
+
+    <!-- Js -->
+    <script src="js/app.js"></script>
+</body>
+</html>

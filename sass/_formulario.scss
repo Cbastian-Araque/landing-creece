@@ -1,0 +1,113 @@
+    #check{
+        display: none;
+    }
+
+    #check:checked ~ .exit{
+        right: 20%;
+        border-radius: 20px 0 0 20px;
+        display:inline;
+        position: fixed;
+    }
+
+    .exit{
+        width: 2.2rem;
+        height: 2.2rem;
+        background-color: red;
+        border-radius: .5rem;
+        position: absolute;
+        top: 50%;
+        right: -10%;
+        font-family: $principal;
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+        transition: right .7s;
+        display: none;
+        z-index: 100;
+    }
+
+    #check:checked ~ .panel{
+        right: 0%;
+        display: flex;
+        position: fixed;
+    }
+    .panel{
+        width: 20%;
+        height: 100%;
+        background: $blanco;
+        position: absolute;
+        top: 0;
+        right: -10%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        transition: right .4s ease;
+        z-index: 100;
+        form{
+            display: grid;
+            gap: 10px 0;
+            width: 100%;
+            margin: auto;
+            margin-top: 0;
+            font-family: $principal;
+            h3{
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 0;
+                font-size: 22px;
+                color: $naranja;
+                letter-spacing: 1.3px;
+            }
+            input{
+                border: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.562);
+                padding: 10px 30px;
+                width: 100%;
+                margin: 10px auto;
+            }
+            input:focus{
+                outline: none;
+                background-color: #f1f2f2;
+                font-weight: bold;
+            }
+            input::placeholder{
+                color: rgba(0, 0, 0, 0.692);
+                font-size: 12px;
+            }
+            .terminos {
+                display: grid;
+                grid-template-columns: 5% 95%;
+                gap: 10px;
+                align-items: center;
+                margin-left: 20px;
+                label{
+                    font-size: 12px;
+                    display: block;
+                }
+            }
+            #submit{
+                border: none;
+                background-color: orangered;
+                font-size: 20px;
+                color: #fff;
+                border-radius: 20px;
+                width: 50%;
+                margin: auto;
+                padding: 10px;
+            }
+        }
+    }
+    
+// MediaQuerys para Panel
+@media screen and (max-width: 768px){
+    #check:checked ~ .exit{
+        right: 70%;
+        border-radius: 20px 0 0 20px;
+        display:inline
+    }
+    
+    
+    .panel{
+        width: 70%;
+    }
+}
